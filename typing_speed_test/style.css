@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap');
+/* #FF5A5F; */
+/* #3ECD3E; */
+/* #7C7A7A; */
+/* #3C3C3C; */
+*{
+    font-family: 'Roboto Mono', monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.1s;
+}
+
+*::selection{
+  background-color: #3ecd3e;
+  color:#3C3C3C;
+}
+
+body{
+    background-color: #3C3C3C;
+    color: #7c7a7a;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+  color:#3ecd3e;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-wrapper, .buttons-wrapper, footer{
+    width: 100%;
+}
+
+.lower-wrapper{
+    width: 100%;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.buttons-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo-wrapper{
+    padding: 20px;
+    font-size: 2em;
+    color: #3ecd3e;
+    font-weight: 700;
+}
+
+.text-wrapper{
+    width: 80%;
+    font-size: 2em;
+}
+
+
+.lyrics{
+  position: relative;
+  font-weight: 700;
+  text-align: justify;
+  word-break:normal;
+}
+
+.lyrics span {
+  position: relative;
+}
+
+.title-band{
+    opacity: 0.2;
+    font-weight: 600;
+}
+
+.correct{
+    color: #3ecd3e;
+}
+
+.incorrect{
+    color: #FF5A5F;
+    text-decoration: underline;
+}
+
+.active{
+}
+
+span.active::before{
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+    display: inline-block;
+    content: "";
+    height: 30px;
+    width: 3px;
+    opacity: 1;
+    border-radius: 10px;
+    background: #33b333;
+    animation: blink 1s ease-in-out infinite;
+    margin-bottom: -5px;
+  }
+
+  @keyframes blink{
+    50%{ 
+      opacity: 0; 
+    }
+  }
+
+  button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #7c7a7a;
+    color: #3C3C3C;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .restart-btn:hover{
+    background-color: #FF5A5F;
+  }
+
+  .about-btn:hover{
+    background-color: #3ecd3e;
+  }
+
+  .better-score{
+    color: #3ecd3e;
+  }
+
+  .worse-score{
+    color: #FF5A5F;
+  }
+
+  #user-text{
+    z-index: -3;
+    opacity: 0;
+    position: absolute;
+  }
