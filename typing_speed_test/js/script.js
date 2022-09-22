@@ -21,7 +21,7 @@ const loadLyrics = () => {
     songs[randomSong].lyrics.split("").forEach(char => {
         songText.innerHTML += `<span>${char}</span>`;
     });
-    titleBand.textContent = `${songs[randomSong].songName} - ${songs[randomSong].artist}`;
+    titleBand.textContent = `"${songs[randomSong].songName}" - ${songs[randomSong].artist}`;
     songText.querySelectorAll('span')[0].classList.add('active');
     document.addEventListener("keydown", () => input.focus());
     songText.addEventListener("click", () => input.focus());
@@ -31,7 +31,7 @@ const loadLyrics = () => {
 const startTimer = () => {
     if(timeLeft > 0) {
         timeLeft--;
-        wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 30);
+        wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 60);
         currWpm = wpm
      } else{
         clearInterval(timer);
@@ -101,7 +101,7 @@ const typingGame = () => {
         allChars.forEach(span => span.classList.remove("active"));
         allChars[charIndex].classList.add("active");
 
-        wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 30);
+        wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;        
     } else {
         clearInterval(timer);

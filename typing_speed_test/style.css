@@ -8,7 +8,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition: 0.1s;
+    transition: 0.2s ease-in-out;
 }
 
 *::selection{
@@ -59,6 +59,9 @@ footer{
 }
 
 .logo-wrapper{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
     padding: 20px;
     font-size: 2em;
     color: #3ecd3e;
@@ -78,8 +81,8 @@ footer{
   word-break: break-all;
 }
 
-.lyrics span {
-  position: relative;
+span{
+  transition: none;
 }
 
 .title-band{
