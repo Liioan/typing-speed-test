@@ -70,12 +70,12 @@ footer{
     font-size: 2em;
 }
 
-
-.lyrics{
-  position: relative;
+.lyrics p{
   font-weight: 700;
+  font-size: 32px;
   text-align: justify;
-  word-break:normal;
+  letter-spacing: 1px;
+  word-break: break-all;
 }
 
 .lyrics span {
@@ -97,6 +97,7 @@ footer{
 }
 
 .active{
+  position: relative;
 }
 
 span.active::before{
@@ -138,7 +139,7 @@ span.active::before{
     background-color: #FF5A5F;
   }
 
-  .about-btn:hover{
+  .about-btn:hover, .settings-btn:hover, .custom-btn:hover{
     background-color: #3ecd3e;
   }
 
@@ -155,3 +156,65 @@ span.active::before{
     opacity: 0;
     position: absolute;
   }
+
+  .about-wrapper, .settings-wrapper, .custom-wrapper{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background-color: #22222280;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(3px);
+}
+
+.about, .settings, .custom{
+    position: relative;
+    background-color: #505050;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.about-desc, .settings-desc, .custom-desc{
+    color: white;
+    padding: 30px;
+    font-size: 2em;
+}
+
+.close-about, .close-settings, .close-custom{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    color: #7c7a7a;
+    border: 3px #7c7a7a solid;
+    background-color: #505050;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s ease-in-out;
+}
+
+.close-about:hover, .close-settings:hover, .close-custom:hover{
+    color:#FF5A5F;
+    border-color: #FF5A5F;
+}
+
+.hidden{
+    display: none;
+    transition: 0.2s;
+}
+
+.animation{
+    translate: 0 100vh;
+    scale: 0;
+}

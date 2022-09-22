@@ -18,20 +18,51 @@
             <div class="title-band"></div>
             <input type="text" name="user-text" id="user-text">
             <div class="lyrics">
+                <p></p>
             </div>
         </div>
             <div class="lower-wrapper">
             <div class="buttons-wrapper">
                 <button class="restart-btn">restart</button>
-                <button class="about-btn">about</button>
+                <button class="settings-btn section" id="settings">settings</button>
+                <button class="custom-btn section" id="custom">custom</button>
+                <button class="about-btn section" id="about">about</button>
             </div>
             <footer>
-                Created by <a href="https://davidbijok.netlify.app">&nbspDavid Bijok</a>
+                Created by <a href="https://davidbijok.netlify.app" target="_blank">&nbspDavid Bijok</a>
             </footer>
+        </div>
+    </div>
+
+    <div class="about-wrapper hidden" style="opacity: 0;">
+        <div class="about animation">
+            <button class="close-about">X</button>
+            <div class="about-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem quos praesentium aspernatur accusantium ducimus laboriosam rerum vel quam rem!
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-wrapper hidden" style="opacity: 0;">
+        <div class="settings animation">
+            <button class="close-settings">X</button>
+            <div class="settings-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem quos praesentium aspernatur accusantium ducimus laboriosam rerum vel quam rem!
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-wrapper hidden" style="opacity: 0;">
+        <div class="custom animation">
+            <button class="close-custom">X</button>
+            <div class="custom-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem quos praesentium aspernatur accusantium ducimus laboriosam rerum vel quam rem!
+            </div>
         </div>
     </div>
 
     <script src="./js/prompts.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/animations.js"></script>
 </body>
 </html>

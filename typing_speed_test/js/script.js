@@ -1,5 +1,6 @@
+//- typing game
 const input = document.querySelector('#user-text')
-const songText = document.querySelector('.lyrics');
+const songText = document.querySelector('.lyrics p');
 const textWrapper = document.querySelector('.text-wrapper');
 const titleBand = document.querySelector('.title-band');
 const restartBtn = document.querySelector('.restart-btn');
@@ -12,6 +13,7 @@ let isTyping = 0;
 let mistakes = 0;
 let currWpm = 0;
 
+//. loads random lyrics, song name and the band name
 const loadLyrics = () => {
     const randomSong = Math.floor(Math.random() * songs.length);
     // console.log(randomSong);
@@ -25,7 +27,7 @@ const loadLyrics = () => {
     songText.addEventListener("click", () => input.focus());
 };
 
-
+//. timer
 const startTimer = () => {
     if(timeLeft > 0) {
         timeLeft--;
@@ -36,10 +38,12 @@ const startTimer = () => {
     }
 };
 
+//. saves new wpm to localstorage
 const saveWpm = (wpm) =>{
     localStorage.setItem('lastWpm', JSON.stringify(wpm));
 }
 
+//.shows end screen
 const showEndScreen = wpm => {
     input.style.display = 'none'
     if(localStorage.getItem('lastWpm')){
@@ -67,6 +71,7 @@ const showEndScreen = wpm => {
     saveWpm(wpm);
 }
 
+//. game 
 const typingGame = () => {
     let allChars = songText.querySelectorAll("span");
     let typedChar = input.value.split("")[charIndex];
@@ -105,7 +110,7 @@ const typingGame = () => {
     }   
 };
 
-
+//. restarts the game
 restartBtn.addEventListener('click', () => {
     location.reload();
 });
