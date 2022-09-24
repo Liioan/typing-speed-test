@@ -16,7 +16,6 @@ buttons.forEach(button => {
 
 const showCurrentSection = () => {
     currentWrapper.classList.remove('hidden');
-   
     for(let i = 0; i < 100; i+=10){
         setTimeout(() => {
             currentWrapper.style.opacity = i;
@@ -26,7 +25,7 @@ const showCurrentSection = () => {
         currentSection.classList.remove('animation');
     }, 100);
 
-    currentWrapper.addEventListener('click', closePopup);
+    // currentWrapper.addEventListener('click', closePopup);
     currentCloseBtn.addEventListener('click', closePopup);
 };
 
