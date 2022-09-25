@@ -11,6 +11,10 @@
     transition: 0.2s ease-in-out;
 }
 
+:root{
+  --color: #3ECD3E;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -160,7 +164,22 @@ span{
     width: 3px;
     opacity: 1;
     border-radius: 10px;
-    background: #33b333;
+    background: #3ECD3E;
+    animation: blink 1s ease-in-out infinite;
+    margin-bottom: -5px;
+  }
+
+  .user-active::before{
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+    display: inline-block;
+    content: "";
+    height: 25px;
+    width: 3px;
+    opacity: 1;
+    border-radius: 10px;
+    background: var(--color);
     animation: blink 1s ease-in-out infinite;
     margin-bottom: -5px;
   }
@@ -248,7 +267,7 @@ span{
 }
 
 .hidden{
-  display: none;
+  display: none !important;
   transition: 0.2s;
 }
 
@@ -347,6 +366,13 @@ span{
   background-color: #3C3C3C;
   border-radius: 20px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.no-songs{
+  text-align: center;
 }
 
 .user-songs li{
@@ -381,7 +407,7 @@ span{
 
 .custom-buttons-wrapper button {
   font-size: 0.5em;
-  width: 300px;
+  width: 20vw
 }
 
 .add-song:hover{
@@ -389,5 +415,83 @@ span{
 }
 
 .delete-all-songs:hover{
+  background-color: #FF5A5F;
+}
+
+/* . add new song form */
+
+.add-song-form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.add-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 90%;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+label{
+  text-indent: 20px;
+  font-size: 2em;
+}
+
+input[type="text"], textarea{
+  height: 70px;
+  background-color: #3C3C3C;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.5em;
+  color: #7c7a7a;
+  font-weight: 600;
+}
+
+input[type="text"]:focus, textarea:focus{
+  outline: none;
+  color: #3ecd3e;
+}
+
+#new-song-lyrics{
+  height: 150px !important;
+  resize: none;
+}
+
+.form-controlls{
+  display: flex;
+  justify-content: center;
+}
+
+.form-controlls * {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #7c7a7a;
+    color: #3C3C3C;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+input[type="submit"]:hover{
+  background-color: #3ecd3e;
+}
+
+.cancel:hover{
   background-color: #FF5A5F;
 }

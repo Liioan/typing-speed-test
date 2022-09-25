@@ -6,7 +6,6 @@ let currentCloseBtn;
 buttons.forEach(button => {
     button.addEventListener('click', e => {
         let id = e.target.id;
-        console.log(id)
             currentWrapper  = document.querySelector(`.${id}-wrapper`);
             currentSection = document.querySelector(`.${id}`);
             currentCloseBtn = document.querySelector(`.close-${id}`);

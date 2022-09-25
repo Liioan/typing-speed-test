@@ -45,7 +45,7 @@
     </div>
 
     <div class="settings-wrapper hidden" style="opacity: 0;">
-        <div class="settings aniamtion">
+        <div class="settings animation">
             <button class="close-settings">X</button>
             <form class="settings-desc">
                 <div class="setting">
@@ -85,56 +85,37 @@
     </div>
 
     
-    <div class="custom-wrapper  hidden" style="opacity: 0;">
+    <div class="custom-wrapper hidden" style="opacity: 0;">
         <div class="custom animation">
             <button class="close-custom">X</button>
             <div class="custom-desc">
                 <ul class="user-songs">
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 1</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 2</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 3</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 4</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 5</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 6</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 7</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 8</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 9</p>
-                        <button class="delete-song">X</button>
-                    </li>
-                    <li>
-                        <p class="song-name">lorem ipsum dolor 10</p>
-                        <button class="delete-song">X</button>
-                    </li>
+                    <p class="no-songs">no custom songs</p>
                 </ul>
                 <div class="custom-buttons-wrapper">
                     <button class="add-song">Add Song</button>
                     <button class="delete-all-songs">Delete All Songs</button>
                 </div>
+            </div>
+            <div class="add-song-form-wrapper hidden">
+                <form class="add-form">
+                    <div class="input-wrapper">
+                        <label for="new-song-name">Song Name:</label>
+                        <input type="text" name="newSongName" id="new-song-name">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="new-song-artist">Artist / Band Name:</label>
+                        <input type="text" name="newSongArtist" id="new-song-artist">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="new-song-lyrics">Lyrics:</label>
+                        <textarea name="newSongLyrics" id="new-song-lyrics" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-controlls">
+                        <input type="submit" value="Save New Song">
+                        <button class="cancel">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -142,5 +123,6 @@
     <script src="./js/prompts.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/animations.js"></script>
+    <script src="./js/custom_songs.js"></script>
 </body>
 </html>

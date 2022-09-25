@@ -22,8 +22,8 @@ const loadLyrics = () => {
         songText.innerHTML += `<span>${char}</span>`;
     });
     titleBand.textContent = `"${songs[randomSong].songName}" - ${songs[randomSong].artist}`;
-    songText.querySelectorAll('span')[0].classList.add('active');
-    document.addEventListener("keydown", () => input.focus());
+    songText.querySelectorAll('span')[0].classList.add('active', "user-active");
+    // document.addEventListener("keydown", () => input.focus());
     songText.addEventListener("click", () => input.focus());
 };
 
@@ -98,7 +98,7 @@ const typingGame = () => {
             }
             charIndex++;
         }
-        allChars.forEach(span => span.classList.remove("active"));
+        allChars.forEach(span => span.classList.remove("active", "user-active"));
         allChars[charIndex].classList.add("active", "user-active");
 
         wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 60);
