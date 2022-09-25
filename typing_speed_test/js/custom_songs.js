@@ -14,7 +14,7 @@ class Song {
         this.artist = artist;
         this.lyrics = lyrics;
     }
-} 
+};
 
 //.writes user songs to list 
 const showUserSongs = () => {
@@ -33,12 +33,12 @@ const showUserSongs = () => {
     } else {
         userSongsList.innerHTML = `<p class="no-songs">no custom songs</p>`
     }
-}
+};
 
 //.saves user songs to local storage
 const saveUserSongs = () => {
     localStorage.setItem('savedSongs', JSON.stringify(userSongs));
-}
+};
 
 //.saves new song to array
 const saveNewSong = (songName, songArtist, songLyrics) => {
@@ -46,7 +46,7 @@ const saveNewSong = (songName, songArtist, songLyrics) => {
     userSongs.push(newSong);    
     showUserSongs();
     saveUserSongs();
-}
+};
 
 addForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -59,17 +59,17 @@ addForm.addEventListener('submit', e => {
         userSongsWrapper.classList.remove('hidden')
         addNewSongWrapper.classList.add('hidden');
     }
-})
+});
 
 addButton.addEventListener('click', () => {
     userSongsWrapper.classList.add('hidden')
     addNewSongWrapper.classList.remove('hidden');
-})
+});
 
 cancelBtn.addEventListener('click', () => {
     userSongsWrapper.classList.remove('hidden')
     addNewSongWrapper.classList.add('hidden');
-})
+});
 
 if(localStorage.getItem('savedSongs')){
     userSongs = JSON.parse(localStorage.getItem('savedSongs'));
@@ -80,4 +80,28 @@ deleteAllSongsBtn.addEventListener('click', () => {
     localStorage.removeItem('savedSongs');
     userSongs = [];
     showUserSongs();
+});
+
+const loadCustomSong = (id) => {
+    songText.innerHTML = '';
+    userSongs[id].lyrics.split("").forEach(char => {
+        songText.innerHTML += `<span>${char}</span>`;
+    });
+    titleBand.textContent = `"${userSongs[id].songName}" - ${userSongs[id].artist}`;
+    songText.querySelectorAll('span')[0].classList.add('active', "user-active");
+    songText.addEventListener("click", () => input.focus());
+    closePopup();
+};
+
+userSongsList.addEventListener('click', e => {
+    if(e.target.tagName === "LI"){
+        let customSongId = e.target.id;
+        loadCustomSong(customSongId);
+        input.focus();
+    } else if(e.target.tagName === "BUTTON"){
+        let customSongId = e.target.parentElement.id;
+        userSongs.splice(customSongId);
+        showUserSongs();
+        saveUserSongs();
+    }
 })

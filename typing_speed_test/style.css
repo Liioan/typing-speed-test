@@ -360,15 +360,13 @@ span{
 
 .user-songs{
   list-style: none;
-  height: 80%;
+  height: auto;
+  max-height: 80%;
   width: 80%;
   overflow: auto;
   background-color: #3C3C3C;
   border-radius: 20px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .no-songs{

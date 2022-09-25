@@ -23,7 +23,7 @@ const showCurrentSection = () => {
     setTimeout(() => {
         currentSection.classList.remove('animation');
     }, 100);
-
+    
     // currentWrapper.addEventListener('click', closePopup);
     currentCloseBtn.addEventListener('click', closePopup);
 };
