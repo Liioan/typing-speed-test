@@ -12,13 +12,13 @@
    
     <div class="wrapper">
         <div class="logo-wrapper">
-            <img src="./assets/logo.svg" alt="" width="100px">
+            <img src="./assets/logo.svg" alt="" width="100px" class="logo">
             |Lyrics Type|
         </div>
         <div class="text-wrapper">
             <div class="title-band user-text"></div>
             <input type="text" name="user-text" id="user-text">
-            <div class="lyrics user-text">
+            <div class="lyrics">
                 <p></p>
             </div>
         </div>
@@ -39,7 +39,7 @@
         <div class="about animation">
             <button class="close-about">X</button>
             <div class="about-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa autem quos praesentium aspernatur accusantium ducimus laboriosam rerum vel quam rem!
+                Hi! Welcome to Lyrics Type, a typing speed test, that uses lyrics of songs to test your speed. You can add your song under the "custom" section, and customize the app theme under the "settings" section. Good luck! 
             </div>
         </div>
     </div>
@@ -51,35 +51,48 @@
                 <div class="setting">
                     <h3>Marker Color:</h3>
                     <div>
-                        <p class="dummy-text user-background user-text"><span class="user-text"><span class="active">l</span>orem ipsum</span></p>
+                        <p class="dummy-text user-text"><span class="user-text"><span class="active">l</span>orem ipsum</span></p>
                         <input type="color" name="markerColor" value="#3ECD3E">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Main Text Color:</h3>
                     <div>
-                        <p class="dummy-text user-background "><span class="user-text">lorem ipsum</span></p>
+                        <p class="dummy-text "><span class="user-text">lorem ipsum</span></p>
                         <input type="color" name="textColor" value="#7C7A7A">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Background Color:</h3>
                     <div>
-                        <p class="dummy-text user-background user-text"><span class="user-text">lorem ipsum</span></p>
+                        <p class="dummy-text user-text"><span class="user-text">lorem ipsum</span></p>
                         <input type="color" name="backgroundColor" value="#3C3C3C">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Secondary text color:</h3>
                     <div>
-                        <p class="dummy-text user-background "><span class="correct user-correct">lorem ipsum</span></p>
+                        <p class="dummy-text "><span class="correct user-correct">lorem ipsum</span></p>
                         <input type="color" name="correctColor" value="#3ECD3E">
                     </div>
                     <div>
-                        <p class="dummy-text user-background "><span class="incorrect user-incorrect">lorem ipsum</span></p>
+                        <p class="dummy-text "><span class="incorrect user-incorrect">lorem ipsum</span></p>
                         <input type="color" name="incorrectColor" value="#FF5A5F">
                     </div>
                 </div>
+                <div class="setting">
+                    <h3>Section Color 1:</h3>
+                    <div>
+                        <input type="color" name="sectionOne" value="#505050">
+                    </div>
+                </div>
+                <div class="setting">
+                    <h3>Section Color 2:</h3>
+                    <div>
+                        <input type="color" name="sectionTwo" value="#7C7A7A">
+                    </div>
+                </div>
+                <button class="reset-settings">Clear Settings</button>
             </form>
         </div>
     </div>
@@ -108,7 +121,7 @@
                     </div>
                     <div class="input-wrapper">
                         <label for="new-song-lyrics">Lyrics:</label>
-                        <textarea name="newSongLyrics" id="new-song-lyrics" required cols="30" rows="10"></textarea>
+                        <textarea name="newSongLyrics" id="new-song-lyrics" required minlength="30" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-controlls">
                         <input type="submit" value="Save New Song">
@@ -118,7 +131,6 @@
             </div>
         </div>
     </div>
-
     <script src="./js/settings.js"></script>
     <script src="./js/prompts.js"></script>
     <script src="./js/script.js"></script>

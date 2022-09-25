@@ -6,7 +6,7 @@ const titleBand = document.querySelector('.title-band');
 const restartBtn = document.querySelector('.restart-btn');
 
 let timer;
-let time = Infinity;
+let time = 30;
 let timeLeft = time;
 let charIndex = 0;
 let isTyping = 0;

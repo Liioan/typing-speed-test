@@ -100,7 +100,7 @@ userSongsList.addEventListener('click', e => {
         input.focus();
     } else if(e.target.tagName === "BUTTON"){
         let customSongId = e.target.parentElement.id;
-        userSongs.splice(customSongId);
+        userSongs.splice(customSongId, 1);
         showUserSongs();
         saveUserSongs();
     }

@@ -24,7 +24,6 @@ const showCurrentSection = () => {
         currentSection.classList.remove('animation');
     }, 100);
     
-    // currentWrapper.addEventListener('click', closePopup);
     currentCloseBtn.addEventListener('click', closePopup);
 };
 
@@ -38,5 +37,6 @@ const closePopup = () =>{
     setTimeout(() => {
         currentWrapper.classList.add('hidden');
     }, 500)
+    input.focus();
 };
 

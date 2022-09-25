@@ -16,6 +16,9 @@
   --correct: #3ECD3E;
   --incorrect: #FF5A5F;
   --text: #7C7A7A;
+  --background:#3C3C3C;
+  --section1: #505050;
+  --section2: #7C7A7A;
 }
 
 ::-webkit-scrollbar {
@@ -23,25 +26,25 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #7c7a7a;
+  background: var(--text);
   border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #33b333;
+  background: var(--marker);
   border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3ecd3e;
+  background: var(--marker);
 }
 
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
-	width: 50px;
-	height: 32px;
-  border-radius: 10px;
+	width: 20%;
+	height: 60%;
+  border-radius: 20px;
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -58,14 +61,14 @@ input[type="color"]:hover{
   cursor: pointer;
 }
 
-*::selection{
-  background-color: #3ecd3e;
-  color:#3C3C3C;
+::selection{
+  background-color: var(--correct);
+  color:var(--background);
 }
 
 body{
-    background-color: #3C3C3C;
-    color: #7c7a7a;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 a{
@@ -74,7 +77,7 @@ a{
 }
 
 a:hover{
-  color:#3ecd3e;
+  color:var(--correct);
 }
 
 .wrapper{
@@ -186,8 +189,8 @@ span{
     height: 50px;
     border: none;
     border-radius: 10px;
-    background-color: #7c7a7a;
-    color: #3C3C3C;
+    background-color: var(--section2);
+    color: var(--section1);
     font-size: 1.5em;
     font-weight: 700;
     margin: 10px;
@@ -196,19 +199,19 @@ span{
   }
 
   .restart-btn:hover{
-    background-color: #FF5A5F;
+    background-color: var(--incorrect);
   }
 
   .about-btn:hover, .settings-btn:hover, .custom-btn:hover{
-    background-color: #3ecd3e;
+    background-color: var(--correct);
   }
 
   .better-score{
-    color: #3ecd3e;
+    color: var(--correct);
   }
 
   .worse-score{
-    color: #FF5A5F;
+    color: var(--incorrect);
   }
 
   #user-text{
@@ -232,7 +235,7 @@ span{
 }
 
 .about-desc, .settings-desc, .custom-desc{
-    color: white;
+    color: var(--correct);
     padding: 30px;
     font-size: 2em;
   }
@@ -244,17 +247,17 @@ span{
     width: 40px;
     height: 40px;
     border-radius: 100px;
-    color: #7c7a7a;
-    border: 3px #7c7a7a solid;
-    background-color: #505050;
+    color: var(--section2);
+    border: 3px var(--section2) solid;
+    background-color: var(--section1);
     cursor: pointer;
     font-weight: 700;
     transition: 0.2s ease-in-out;
   }
 
 .close-about:hover, .close-settings:hover, .close-custom:hover{
-    color:#FF5A5F;
-    border-color: #FF5A5F;
+    color: var(--incorrect);
+    border-color: var(--incorrect);
 }
 
 .hidden{
@@ -271,7 +274,7 @@ span{
 
 .about{
   position: relative;
-  background-color: #505050;
+  background-color: var(--section1);
   width: 50vw;
   height: 40vh;
   border-radius: 20px;
@@ -285,9 +288,9 @@ span{
 
 .settings{
   position: relative;
-  background-color: #505050;
+  background-color: var(--section1);
   width: 65vw;
-  height: 60vh;
+  height: 80vh;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -296,20 +299,23 @@ span{
 }
 
 .settings-desc{
-  height: 100%;
-  width: 90%;
+  max-height: 90%;
+  width: 85%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(100px, auto);
   grid-gap: 10px;
+  overflow: auto;
 }
 
 .setting{
-  background-color: #7c7a7a;
+  background-color: var(--section2);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  height: 300px;
 }
 
 .setting div{
@@ -317,20 +323,32 @@ span{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: 30%;
 }
 
 .dummy-text{
-  background-color: #3C3C3C;
+  background-color: var(--background);
   padding: 10px;
   border-radius: 20px;
   color: #7c7a7a;
+}
+
+.reset-settings{
+  font-size: 0.8em;
+  width: auto;
+  grid-column: 1/3;
+  color: var(--section1);
+}
+
+.reset-settings:hover{
+  background-color: var(--incorrect);
 }
 
 /* . custom songs section */
 
 .custom{
   position: relative;
-  background-color: #505050;
+  background-color: var(--section1);
   width: 50vw;
   height: 75vh;
   border-radius: 20px;
@@ -355,7 +373,7 @@ span{
   max-height: 80%;
   width: 80%;
   overflow: auto;
-  background-color: #3C3C3C;
+  background-color: var(--background);
   border-radius: 20px;
   padding: 20px;
 }
@@ -367,7 +385,7 @@ span{
 .user-songs li{
   display: flex;
   justify-content: space-between;
-  background-color: #505050;
+  background-color: var(--section1);
   align-items: center;
   border-radius: 20px;
   padding: 10px;
@@ -376,17 +394,20 @@ span{
 
 .user-songs li:hover{
   cursor: pointer;
-  background-color: #5f5f5f;
+  background-color: var(--section2);
 }
 
 .delete-song{
   width: 50px;
   height: 50px;
   font-size: 26px;
+  background-color: var(--section2);
+  color: var(--section1);
+  border: 2px solid var(--section1);
 }
 
 .delete-song:hover{
-  color:#FF5A5F
+  color:var(--incorrect)
 }
 
 .custom-buttons-wrapper{
@@ -400,11 +421,11 @@ span{
 }
 
 .add-song:hover{
-  background-color: #33b333;
+  background-color: var(--correct);
 }
 
 .delete-all-songs:hover{
-  background-color: #FF5A5F;
+  background-color: var(--incorrect);
 }
 
 /* . add new song form */
@@ -439,18 +460,18 @@ label{
 
 input[type="text"], textarea{
   height: 70px;
-  background-color: #3C3C3C;
+  background-color: var(--background);
   border: none;
   border-radius: 20px;
   padding: 10px;
   font-size: 1.5em;
-  color: #7c7a7a;
+  color: var(--text);
   font-weight: 600;
 }
 
 input[type="text"]:focus, textarea:focus{
   outline: none;
-  color: #3ecd3e;
+  color: var(--correct);
 }
 
 #new-song-lyrics{
@@ -468,8 +489,8 @@ input[type="text"]:focus, textarea:focus{
     height: 50px;
     border: none;
     border-radius: 10px;
-    background-color: #7c7a7a;
-    color: #3C3C3C;
+    background-color: var(--section2);
+    color: var(--section1);
     font-size: 1.5em;
     font-weight: 700;
     margin: 10px;
@@ -478,9 +499,9 @@ input[type="text"]:focus, textarea:focus{
 }
 
 input[type="submit"]:hover{
-  background-color: #3ecd3e;
+  background-color: var(--correct);
 }
 
 .cancel:hover{
-  background-color: #FF5A5F;
+  background-color: var(--incorrect);
 }
