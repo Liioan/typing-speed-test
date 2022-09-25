@@ -12,7 +12,10 @@
 }
 
 :root{
-  --color: #3ECD3E;
+  --marker: #3ECD3E;
+  --correct: #3ECD3E;
+  --incorrect: #FF5A5F;
+  --text: #7C7A7A;
 }
 
 ::-webkit-scrollbar {
@@ -128,6 +131,10 @@ footer{
   overflow: auto;
 }
 
+.user-text{
+  color: var(--text);
+}
+
 span{
   transition: 0.1s;
 }
@@ -142,12 +149,11 @@ span{
 }
 
 .correct{
-    color: #3ecd3e;
+    color: var(--correct);
 }
 
 .incorrect{
-    color: #FF5A5F;
-    /* text-decoration: underline; */
+    color: var(--incorrect);
 }
 
 .active{
@@ -164,22 +170,7 @@ span{
     width: 3px;
     opacity: 1;
     border-radius: 10px;
-    background: #3ECD3E;
-    animation: blink 1s ease-in-out infinite;
-    margin-bottom: -5px;
-  }
-
-  .user-active::before{
-    position: absolute;
-    top: 10px;
-    z-index: 3;
-    display: inline-block;
-    content: "";
-    height: 25px;
-    width: 3px;
-    opacity: 1;
-    border-radius: 10px;
-    background: var(--color);
+    background: var(--marker);
     animation: blink 1s ease-in-out infinite;
     margin-bottom: -5px;
   }

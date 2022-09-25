@@ -24,7 +24,7 @@ const showUserSongs = () => {
         userSongs.forEach(song => {
             userSongsList.innerHTML += `
                 <li id="${index}">
-                    <p class="song-name">${song.songName}</p>
+                    ${song.songName}
                     <button class="delete-song">X</button>
                 </li>
             `

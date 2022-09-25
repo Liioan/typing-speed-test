@@ -16,9 +16,9 @@
             |Lyrics Type|
         </div>
         <div class="text-wrapper">
-            <div class="title-band"></div>
+            <div class="title-band user-text"></div>
             <input type="text" name="user-text" id="user-text">
-            <div class="lyrics">
+            <div class="lyrics user-text">
                 <p></p>
             </div>
         </div>
@@ -51,39 +51,38 @@
                 <div class="setting">
                     <h3>Marker Color:</h3>
                     <div>
-                        <p class="dummy-text"><span class="active">l</span>orem ipsum</p>
-                        <input type="color" name="" id="" value="#3ECD3E">
+                        <p class="dummy-text user-background user-text"><span class="user-text"><span class="active">l</span>orem ipsum</span></p>
+                        <input type="color" name="markerColor" value="#3ECD3E">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Main Text Color:</h3>
                     <div>
-                        <p class="dummy-text">lorem ipsum</p>
-                        <input type="color" name="" id="" value="#7C7A7A">
+                        <p class="dummy-text user-background "><span class="user-text">lorem ipsum</span></p>
+                        <input type="color" name="textColor" value="#7C7A7A">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Background Color:</h3>
                     <div>
-                        <p class="dummy-text">lorem ipsum</p>
-                        <input type="color" name="" id="" value="#3C3C3C">
+                        <p class="dummy-text user-background user-text"><span class="user-text">lorem ipsum</span></p>
+                        <input type="color" name="backgroundColor" value="#3C3C3C">
                     </div>
                 </div>
                 <div class="setting">
                     <h3>Secondary text color:</h3>
                     <div>
-                        <p class="dummy-text"><span class="correct">lorem ipsum</span></p>
-                        <input type="color" name="" id="" value="#3ECD3E">
+                        <p class="dummy-text user-background "><span class="correct user-correct">lorem ipsum</span></p>
+                        <input type="color" name="correctColor" value="#3ECD3E">
                     </div>
                     <div>
-                        <p class="dummy-text"><span class="incorrect">lorem ipsum</span></p>
-                        <input type="color" name="" id="" value="#FF5A5F">
+                        <p class="dummy-text user-background "><span class="incorrect user-incorrect">lorem ipsum</span></p>
+                        <input type="color" name="incorrectColor" value="#FF5A5F">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
     
     <div class="custom-wrapper hidden" style="opacity: 0;">
         <div class="custom animation">
@@ -120,6 +119,7 @@
         </div>
     </div>
 
+    <script src="./js/settings.js"></script>
     <script src="./js/prompts.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/animations.js"></script>

@@ -1,12 +1,12 @@
 //- typing game
-const input = document.querySelector('#user-text')
+const input = document.querySelector('#user-text');
 const songText = document.querySelector('.lyrics p');
 const textWrapper = document.querySelector('.text-wrapper');
 const titleBand = document.querySelector('.title-band');
 const restartBtn = document.querySelector('.restart-btn');
 
 let timer;
-let time = 30;
+let time = Infinity;
 let timeLeft = time;
 let charIndex = 0;
 let isTyping = 0;
@@ -22,7 +22,7 @@ const loadLyrics = () => {
         songText.innerHTML += `<span>${char}</span>`;
     });
     titleBand.textContent = `"${songs[randomSong].songName}" - ${songs[randomSong].artist}`;
-    songText.querySelectorAll('span')[0].classList.add('active', "user-active");
+    songText.querySelectorAll('span')[0].classList.add('active');
     // document.addEventListener("keydown", () => input.focus());
     songText.addEventListener("click", () => input.focus());
 };
@@ -46,11 +46,15 @@ const saveWpm = (wpm) =>{
 //.shows end screen
 const showEndScreen = wpm => {
     input.style.display = 'none'
+    let finalTime = 30;
+    if(timeLeft > 0){
+        finalTime = time - timeLeft;
+    }
     if(localStorage.getItem('lastWpm')){
         let lastWpm = JSON.parse(localStorage.getItem('lastWpm'));
         songText.innerHTML = `
         <h2 class='score'>last wpm: ${JSON.parse(localStorage.getItem('lastWpm'))}</h2>
-        <h2 class='score'>wpm: ${wpm}, time: 30s, errors: ${mistakes}</h2>
+        <h2 class='score'>wpm: ${wpm}, time: ${finalTime}s, errors: ${mistakes}</h2>
         `;
         if(lastWpm < wpm){
             songText.innerHTML += `
@@ -65,7 +69,7 @@ const showEndScreen = wpm => {
         }
     } else {
         songText.innerHTML = `
-        <h2 class='score'>wpm: ${wpm}, time: 30s, errors: ${mistakes}</h2>
+        <h2 class='score'>wpm: ${wpm}, time: ${finalTime}s, errors: ${mistakes}</h2>
         `;
     }
     saveWpm(wpm);
@@ -87,19 +91,19 @@ const typingGame = () => {
                 if(allChars[charIndex].classList.contains("incorrect")) {
                     mistakes--;
                 }
-                allChars[charIndex].classList.remove("correct", "incorrect");
+                allChars[charIndex].classList.remove("correct", "incorrect",);
             }
         } else {
             if(allChars[charIndex].innerText == typedChar) {
-                allChars[charIndex].classList.add("correct", "user-correct");
+                allChars[charIndex].classList.add("correct");
             } else {
                 mistakes++;
-                allChars[charIndex].classList.add("incorrect", "user-incorrect");
+                allChars[charIndex].classList.add("incorrect");
             }
             charIndex++;
         }
-        allChars.forEach(span => span.classList.remove("active", "user-active"));
-        allChars[charIndex].classList.add("active", "user-active");
+        allChars.forEach(span => span.classList.remove("active"));
+        allChars[charIndex].classList.add("active");
 
         wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;        
@@ -117,3 +121,4 @@ restartBtn.addEventListener('click', () => {
 
 loadLyrics();
 input.addEventListener('input', typingGame);
+input.focus();
