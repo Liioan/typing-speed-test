@@ -91,15 +91,15 @@ const typingGame = () => {
             }
         } else {
             if(allChars[charIndex].innerText == typedChar) {
-                allChars[charIndex].classList.add("correct");
+                allChars[charIndex].classList.add("correct", "user-correct");
             } else {
                 mistakes++;
-                allChars[charIndex].classList.add("incorrect");
+                allChars[charIndex].classList.add("incorrect", "user-incorrect");
             }
             charIndex++;
         }
         allChars.forEach(span => span.classList.remove("active"));
-        allChars[charIndex].classList.add("active");
+        allChars[charIndex].classList.add("active", "user-active");
 
         wpm = Math.round(((charIndex - mistakes)  / 5) / (time - timeLeft) * 60);
         wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;        

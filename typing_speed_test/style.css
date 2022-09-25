@@ -143,7 +143,7 @@ span{
 
 .incorrect{
     color: #FF5A5F;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .active{
@@ -221,105 +221,11 @@ span{
     backdrop-filter: blur(3px);
 }
 
-.about{
-    position: relative;
-    background-color: #505050;
-    width: 50vw;
-    height: 40vh;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-}
-
-.custom{
-  position: relative;
-  background-color: #505050;
-  width: 50vw;
-  height: 75vh;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
-}
-
-.settings{
-  position: relative;
-  background-color: #505050;
-  width: 60vw;
-  height: 60vh;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s;
-}
-
 .about-desc, .settings-desc, .custom-desc{
     color: white;
     padding: 30px;
     font-size: 2em;
   }
-  
-  .custom-desc{
-  width: 100%;
-  height: 90%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
-
-.settings-desc{
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(100px, auto);
-  grid-gap: 20px;
-}
-
-.setting{
-  background-color: #7c7a7a;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 20px;
-}
-
-.setting-wrapper{
-  display: flex;
-  /* flex-direction: column; */
-  width: 80%;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.setting-title{
-  font-size: 0.9em;
-  color: #3C3C3C;
-}
-
-.dummy-text{
-  background-color: #3C3C3C;
-  color: #7c7a7a;
-  padding: 5px;
-  border-radius: 10px;
-  font-size: 29px;
-}
-
-input[type="submit"]{
-  grid-column: 1/3;
-  color: #3C3C3C;
-  background-color: #7c7a7a;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1em;
-}
 
 .close-about, .close-settings, .close-custom{
     position: absolute;
@@ -351,75 +257,137 @@ input[type="submit"]{
   scale: 0;
 }
 
-.user-songs{
+/* . about section */
+
+.about{
+  position: relative;
+  background-color: #505050;
+  width: 50vw;
+  height: 40vh;
+  border-radius: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  transition: all 0.5s;
+}
+
+/*.  settings section */
+
+.settings{
+  position: relative;
+  background-color: #505050;
+  width: 65vw;
+  height: 60vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.settings-desc{
   height: 100%;
   width: 90%;
-  border-radius: 20px;
-  background-color: #3C3C3C;
-  border: 5px solid #7c7a7a;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
-.user-songs ul {
+.setting{
+  background-color: #7c7a7a;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.setting div{
   width: 100%;
-  list-style: none;
-  height: 500px;
-  overflow: auto;
-  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-li{
-  margin-bottom: 10px;
+.dummy-text{
+  background-color: #3C3C3C;
+  padding: 10px;
   border-radius: 20px;
+  color: #7c7a7a;
+}
+
+/* . custom songs section */
+
+.custom{
+  position: relative;
   background-color: #505050;
+  width: 50vw;
+  height: 75vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.custom-desc{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.user-songs{
+  list-style: none;
+  height: 80%;
+  width: 80%;
+  overflow: auto;
+  background-color: #3C3C3C;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.user-songs li{
   display: flex;
   justify-content: space-between;
+  background-color: #505050;
   align-items: center;
-  padding: 20px;
-  border: 2px solid  #505050;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-li:hover{
+.user-songs li:hover{
   cursor: pointer;
-  /* background-color: #5f5f5f; */
-  border: #33b333 2px solid;
+  background-color: #5f5f5f;
 }
 
 .delete-song{
   width: 50px;
   height: 50px;
-  border-radius:100px ;
-  font-size: 30px;
-  border: 2px solid #3C3C3C;
-  background-color: #505050;
+  font-size: 26px;
 }
 
 .delete-song:hover{
-  border: 2px solid #FF5A5F;
-  color: #FF5A5F;
+  color:#FF5A5F
 }
 
-.custom-buttons{
+.custom-buttons-wrapper{
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  border-radius: 20px;
+  justify-content: space-between;
 }
 
-.custom-button{
-  font-size: 20px;
-  width: 50%;
+.custom-buttons-wrapper button {
+  font-size: 0.5em;
+  width: 300px;
 }
 
-.custom-button:first-of-type:hover{
+.add-song:hover{
   background-color: #33b333;
 }
 
-.custom-button:last-of-type:hover{
+.delete-all-songs:hover{
   background-color: #FF5A5F;
 }
