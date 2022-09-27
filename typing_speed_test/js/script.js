@@ -7,7 +7,7 @@ const restartBtn = document.querySelector('.restart-btn');
 const customBtn = document.querySelector('.custom-btn')
 
 let timer;
-let time = 5;
+let time = 30;
 let timeLeft = time;
 let charIndex = 0;
 let isTyping = 0;
