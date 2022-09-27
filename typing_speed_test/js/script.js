@@ -4,9 +4,10 @@ const songText = document.querySelector('.lyrics p');
 const textWrapper = document.querySelector('.text-wrapper');
 const titleBand = document.querySelector('.title-band');
 const restartBtn = document.querySelector('.restart-btn');
+const customBtn = document.querySelector('.custom-btn')
 
 let timer;
-let time = 30;
+let time = 5;
 let timeLeft = time;
 let charIndex = 0;
 let isTyping = 0;
@@ -72,6 +73,7 @@ const showEndScreen = wpm => {
         <h2 class='score'>wpm: ${wpm}, time: ${finalTime}s, errors: ${mistakes}</h2>
         `;
     }
+    customBtn.classList.add('hidden');
     saveWpm(wpm);
 }
 
@@ -112,6 +114,10 @@ const typingGame = () => {
         input.value = "";
         showEndScreen(currWpm);
     }   
+
+    if(!customBtn.classList.contains('hidden')){
+        customBtn.classList.add('hidden');
+    }
 };
 
 //. restarts the game
