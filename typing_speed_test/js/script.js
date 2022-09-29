@@ -20,7 +20,12 @@ const loadLyrics = () => {
     // console.log(randomSong);
     songText.innerHTML = '';
     songs[randomSong].lyrics.split("").forEach(char => {
-        songText.innerHTML += `<span>${char}</span>`;
+        if(char === "-"){
+            char = '&nbsp'
+        }
+        if(!(char === "'" || char ==='?' || char === ',' || char === '"' || char === '(' || char === ')')){
+            songText.innerHTML += `<span>${char.toLowerCase()}</span>`;
+        }
     });
     titleBand.textContent = `"${songs[randomSong].songName}" - ${songs[randomSong].artist}`;
     songText.querySelectorAll('span')[0].classList.add('active');
