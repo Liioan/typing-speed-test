@@ -20,15 +20,20 @@ const loadLyrics = () => {
     // console.log(randomSong);
     songText.innerHTML = '';
     songs[randomSong].lyrics.split("").forEach(char => {
-        if(char === "-"){
-            char = '&nbsp'
-        }
-        if(!(char === "'" || char ==='?' || char === ',' || char === '"' || char === '(' || char === ')')){
+        if(punctuationSetting === 0){
+            if(char === "-"){
+                char = '&nbsp'
+            }
+            if(!(char === "'" || char ==='?' || char === ',' || char === '"' || char === '(' || char === ')')){
+                songText.innerHTML += `<span>${char.toLowerCase()}</span>`;
+            }
+        } else {
             songText.innerHTML += `<span>${char.toLowerCase()}</span>`;
         }
     });
     titleBand.textContent = `"${songs[randomSong].songName}" - ${songs[randomSong].artist}`;
     songText.querySelectorAll('span')[0].classList.add('active');
+    titleBand.setAttribute('href', songs[randomSong].link);
     // document.addEventListener("keydown", () => input.focus());
     songText.addEventListener("click", () => input.focus());
 };

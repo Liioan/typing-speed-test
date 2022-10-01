@@ -344,6 +344,15 @@ span{
   background-color: var(--incorrect);
 }
 
+ .selected#On{
+  background-color: var(--correct);
+  height: 60px;
+}
+ .selected#Off{
+  background-color: var(--incorrect);
+  height: 60px;
+}
+
 /* . custom songs section */
 
 .custom{

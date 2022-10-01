@@ -1,5 +1,6 @@
 const settingsForm = document.querySelector('.settings-desc');
 const resetSettings = document.querySelector('.reset-settings');
+const punctuation = document.querySelector('.punctiation');
 
 let userText;
 let userCorrect;
@@ -7,7 +8,8 @@ let userIncorrect;
 let userActive;
 let userBackground;
 
-let userSettings =[]
+let userSettings =[];
+let punctuationSetting = 0; 
 
 class Setting{
     constructor(settingName, value){
@@ -48,6 +50,23 @@ settingsForm.addEventListener('input', () => {
     document.documentElement.style.setProperty('--section2', userSettings[6].value);
 })
 
+punctuation.addEventListener('click', e => {
+    if(e.target.tagName === 'BUTTON'){
+        let  target = punctuation.querySelector(`#${e.target.id}`);
+        if(target.id === 'On'){
+            punctuationSetting = 1;
+            target.classList.add('selected');
+            punctuation.lastElementChild.classList.remove('selected');
+        } else if(target.id === 'Off'){
+            punctuationSetting = 0;
+            target.classList.add('selected');
+            punctuation.firstElementChild.classList.remove('selected');
+        }
+        localStorage.setItem('punctuation', punctuationSetting);
+        location.reload();
+    }
+});
+
 settingsForm.addEventListener('submit', e => {
     e.preventDefault();
 })
@@ -63,6 +82,14 @@ if(localStorage.getItem('userSettings')){
     document.documentElement.style.setProperty('--incorrect', userSettings[4].value);
     document.documentElement.style.setProperty('--section1', userSettings[5].value);
     document.documentElement.style.setProperty('--section2', userSettings[6].value);
+}
+
+if(localStorage.getItem('punctuation')){
+    punctuationSetting = Number(localStorage.getItem('punctuation'));
+    if(Number(punctuationSetting) === 1){
+        punctuation.firstElementChild.classList.add('selected');
+        punctuation.lastElementChild.classList.remove('selected');
+    }
 }
 
 resetSettings.addEventListener('click', () => {
