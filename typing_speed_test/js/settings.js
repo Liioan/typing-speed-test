@@ -1,6 +1,7 @@
 const settingsForm = document.querySelector('.settings-desc');
 const resetSettings = document.querySelector('.reset-settings');
 const punctuation = document.querySelector('.punctiation');
+const fontWeight = document.querySelector('#font-weight')
 
 let userText;
 let userCorrect;
@@ -10,6 +11,7 @@ let userBackground;
 
 let userSettings =[];
 let punctuationSetting = 0; 
+let fontWeightSetting = 0;
 
 class Setting{
     constructor(settingName, value){
@@ -31,6 +33,9 @@ const setHTMLvalues = () =>{
     settingsForm.sectionOne.value = userSettings[5].value;
     settingsForm.sectionTwo.value = userSettings[6].value;
 };
+
+
+//- event listners
 
 settingsForm.addEventListener('input', () => {
     userSettings = [];
@@ -69,7 +74,15 @@ punctuation.addEventListener('click', e => {
 
 settingsForm.addEventListener('submit', e => {
     e.preventDefault();
-})
+});
+
+fontWeight.addEventListener('input', () => {
+    fontWeightSetting = fontWeight.value;
+    document.documentElement.style.setProperty('--weight', fontWeightSetting);
+    localStorage.setItem("fontWeight", fontWeightSetting);
+});
+
+//- local storage
 
 if(localStorage.getItem('userSettings')){
     userSettings = JSON.parse(localStorage.getItem('userSettings'));
@@ -90,6 +103,12 @@ if(localStorage.getItem('punctuation')){
         punctuation.firstElementChild.classList.add('selected');
         punctuation.lastElementChild.classList.remove('selected');
     }
+}
+
+if(localStorage.getItem('fontWeight')){
+    fontWeightSetting = localStorage.getItem('fontWeight');
+    document.documentElement.style.setProperty('--weight', fontWeightSetting);
+    fontWeight.value = fontWeightSetting;
 }
 
 resetSettings.addEventListener('click', () => {

@@ -6,6 +6,7 @@ const titleBand = document.querySelector('.title-band');
 const restartBtn = document.querySelector('.restart-btn');
 const customBtn = document.querySelector('.custom-btn')
 
+
 let timer;
 let time = 30;
 let timeLeft = time;
@@ -15,7 +16,7 @@ let mistakes = 0;
 let currWpm = 0;
 
 //. loads random lyrics, song name and the band name
-const loadLyrics = () => {
+const loadLyrics = (nwm ) => {
     const randomSong = Math.floor(Math.random() * songs.length);
     // console.log(randomSong);
     songText.innerHTML = '';
