@@ -10,7 +10,6 @@
     box-sizing: border-box;
     transition: 0.2s ease-in-out;
 }
-
 :root{
   --marker: #3ECD3E;
   --correct: #3ECD3E;
@@ -21,25 +20,20 @@
   --section2: #7C7A7A;
   --weight: 500;
 }
-
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--text);
   border-radius: 100px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--marker);
   border-radius: 100px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--marker);
 }
-
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
@@ -47,40 +41,32 @@ input[type="color"] {
 	height: 60%;
   border-radius: 20px;
 }
-
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0px;
   border-radius: 10px;
 }
-
 input[type="color"]::-webkit-color-swatch {
 	border: 5px solid #3C3C3C;
   border-radius: 10px;
 }
-
 input[type="color"]:hover{
   cursor: pointer;
 }
-
 ::selection{
   background-color: var(--correct);
   color:var(--background);
 }
-
 body{
     background-color: var(--background);
     color: var(--text);
 }
-
 a{
     color: inherit;
     text-decoration: none;
 }
-
 a:hover{
   color:var(--correct);
 }
-
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -88,27 +74,22 @@ a:hover{
     align-items: center;
     height: 100vh;
 }
-
 .logo-wrapper, .buttons-wrapper, footer{
     width: 100%;
 }
-
 .lower-wrapper{
     width: 100%;
 }
-
 footer{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .buttons-wrapper{
     display: flex;
     justify-content: flex-end;
 }
-
 .logo-wrapper{
     display: flex;
     /* justify-content: center; */
@@ -118,12 +99,10 @@ footer{
     color: #3ecd3e;
     font-weight: 700;
 }
-
 .text-wrapper{
     width: 80%;
     font-size: 2em;
 }
-
 .lyrics p{
   padding: 20px;
   max-height: 400px;
@@ -134,37 +113,29 @@ footer{
   max-width: 100%;
   overflow: auto;
 }
-
 .user-text{
   color: var(--text);
   font-weight: var(--weight);
 }
-
 span{
   transition: 0.1s;
 }
-
 .title-band{
     opacity: 0.2;
     font-weight: 600;
 }
-
 .title-band:hover{
   opacity: 1;
 }
-
 .correct{
     color: var(--correct);
 }
-
 .incorrect{
     color: var(--incorrect);
 }
-
 .active{
   position: relative;
 }
-
 .active::before{
     position: absolute;
     top: 8px;
@@ -180,13 +151,11 @@ span{
     animation: blink 1s ease-in-out infinite;
     margin-bottom: -5px;
   }
-
   @keyframes blink{
     50%{ 
       opacity: 0; 
     }
   }
-
   button{
     width: 150px;
     height: 50px;
@@ -200,29 +169,23 @@ span{
     cursor: pointer;
     transition: 0.2s;
   }
-
   .restart-btn:hover{
     background-color: var(--incorrect);
   }
-
   .about-btn:hover, .settings-btn:hover, .custom-btn:hover{
     background-color: var(--correct);
   }
-
   .better-score{
     color: var(--correct);
   }
-
   .worse-score{
     color: var(--incorrect);
   }
-
   #user-text{
     z-index: -3;
     opacity: 0;
     position: absolute;
   }
-
   .about-wrapper, .settings-wrapper, .custom-wrapper{
     position: fixed;
     top: 0;
@@ -236,13 +199,11 @@ span{
     transition: all 0.2s ease-in-out;
     backdrop-filter: blur(3px);
 }
-
 .about-desc, .settings-desc, .custom-desc{
     color: var(--correct);
     padding: 30px;
     font-size: 2em;
   }
-
 .close-about, .close-settings, .close-custom{
     position: absolute;
     top: 20px;
@@ -257,24 +218,19 @@ span{
     font-weight: 700;
     transition: 0.2s ease-in-out;
   }
-
 .close-about:hover, .close-settings:hover, .close-custom:hover{
     color: var(--incorrect);
     border-color: var(--incorrect);
 }
-
 .hidden{
   display: none !important;
   transition: 0.2s;
 }
-
 .animation{
   translate: 0 100vh;
   scale: 0;
 }
-
 /* . about section */
-
 .about{
   position: relative;
   background-color: var(--section1);
@@ -286,9 +242,7 @@ span{
   align-items: center;
   transition: all 0.5s;
 }
-
 /*.  settings section */
-
 .settings{
   position: relative;
   background-color: var(--section1);
@@ -300,7 +254,6 @@ span{
   align-items: center;
   transition: all 0.5s;
 }
-
 .settings-desc{
   max-height: 90%;
   width: 85%;
@@ -310,7 +263,6 @@ span{
   grid-gap: 10px;
   overflow: auto;
 }
-
 .setting{
   background-color: var(--section2);
   border-radius: 20px;
@@ -320,7 +272,6 @@ span{
   justify-content: space-evenly;
   height: 300px;
 }
-
 .setting div{
   width: 100%;
   display: flex;
@@ -328,25 +279,21 @@ span{
   align-items: center;
   height: 30%;
 }
-
 .dummy-text{
   background-color: var(--background);
   padding: 10px;
   border-radius: 20px;
   color: #7c7a7a;
 }
-
 .reset-settings{
   font-size: 0.8em;
   width: auto;
   grid-column: 1/3;
   color: var(--section1);
 }
-
 .reset-settings:hover{
   background-color: var(--incorrect);
 }
-
  .selected#On{
   background-color: var(--correct);
   height: 60px;
@@ -355,8 +302,6 @@ span{
   background-color: var(--incorrect);
   height: 60px;
 }
-
-
 .font-weight-wrapper{
   width: 30% !important;
   height: 80% !important;
@@ -368,11 +313,9 @@ span{
   background-color: var(--section1);
   border-radius: 20px;
 }
-
 .font-weight{
   height: 50%;
 }
-
 .range{
   -webkit-appearance: none;
   background: var(--background);
@@ -382,7 +325,6 @@ span{
   height: 20%;
   width: 90%;
 }
-
 .range::-webkit-slider-thumb{
   -webkit-appearance: none;
   background-color: var(--correct);
@@ -394,15 +336,12 @@ span{
   height: 15px !important;
   width: 25px;
 }
-
 .range::-webkit-slider-thumb:hover{
   background-color: var(--marker);
   box-shadow: -410px 0 0 400px var(--text);
 }
 
-
 /* . custom songs section */
-
 .custom{
   position: relative;
   background-color: var(--section1);
@@ -414,7 +353,6 @@ span{
   align-items: center;
   transition: all 0.5s;
 }
-
 .custom-desc{
   width: 100%;
   height: 100%;
@@ -423,7 +361,6 @@ span{
   justify-content: space-evenly;
   align-items: center;
 }
-
 .user-songs{
   list-style: none;
   height: auto;
@@ -434,11 +371,9 @@ span{
   border-radius: 20px;
   padding: 20px;
 }
-
 .no-songs{
   text-align: center;
 }
-
 .user-songs li{
   display: flex;
   justify-content: space-between;
@@ -448,12 +383,10 @@ span{
   padding: 10px;
   margin-bottom: 10px;
 }
-
 .user-songs li:hover{
   cursor: pointer;
   background-color: var(--section2);
 }
-
 .delete-song{
   width: 50px;
   height: 50px;
@@ -462,31 +395,24 @@ span{
   color: var(--section1);
   border: 2px solid var(--section1);
 }
-
 .delete-song:hover{
   color:var(--incorrect)
 }
-
 .custom-buttons-wrapper{
   display: flex;
   justify-content: space-between;
 }
-
 .custom-buttons-wrapper button {
   font-size: 0.5em;
   width: 20vw
 }
-
 .add-song:hover{
   background-color: var(--correct);
 }
-
 .delete-all-songs:hover{
   background-color: var(--incorrect);
 }
-
 /* . add new song form */
-
 .add-song-form-wrapper{
     display: flex;
     justify-content: center;
@@ -494,7 +420,6 @@ span{
     width: 100%;
     height: 100%;
 }
-
 .add-form{
   display: flex;
   flex-direction: column;
@@ -502,19 +427,16 @@ span{
   width: 90%;
   height: 90%;
 }
-
 .input-wrapper{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px;
 }
-
 label{
   text-indent: 20px;
   font-size: 2em;
 }
-
 input[type="text"], textarea{
   height: 70px;
   background-color: var(--background);
@@ -525,22 +447,18 @@ input[type="text"], textarea{
   color: var(--text);
   font-weight: 600;
 }
-
 input[type="text"]:focus, textarea:focus{
   outline: none;
   color: var(--correct);
 }
-
 #new-song-lyrics{
   height: 150px !important;
   resize: none;
 }
-
 .form-controlls{
   display: flex;
   justify-content: center;
 }
-
 .form-controlls * {
     width: 50%;
     height: 50px;
@@ -554,11 +472,9 @@ input[type="text"]:focus, textarea:focus{
     cursor: pointer;
     transition: 0.2s;
 }
-
 input[type="submit"]:hover{
   background-color: var(--correct);
 }
-
 .cancel:hover{
   background-color: var(--incorrect);
 }
