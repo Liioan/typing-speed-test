@@ -1,7 +1,8 @@
 const settingsForm = document.querySelector('.settings-desc');
 const resetSettings = document.querySelector('.reset-settings');
 const punctuation = document.querySelector('.punctiation');
-const fontWeight = document.querySelector('#font-weight')
+const fontWeight = document.querySelector('#font-weight');
+const fontWeightValue = document.querySelector('.font-weight');
 
 let userText;
 let userCorrect;
@@ -80,6 +81,7 @@ fontWeight.addEventListener('input', () => {
     fontWeightSetting = fontWeight.value;
     document.documentElement.style.setProperty('--weight', fontWeightSetting);
     localStorage.setItem("fontWeight", fontWeightSetting);
+    fontWeightValue.textContent = fontWeightSetting;
 });
 
 //- local storage
@@ -109,6 +111,7 @@ if(localStorage.getItem('fontWeight')){
     fontWeightSetting = localStorage.getItem('fontWeight');
     document.documentElement.style.setProperty('--weight', fontWeightSetting);
     fontWeight.value = fontWeightSetting;
+    fontWeightValue.textContent = fontWeightSetting;
 }
 
 resetSettings.addEventListener('click', () => {
