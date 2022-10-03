@@ -132,6 +132,7 @@ span{
 }
 .incorrect{
     color: var(--incorrect);
+    text-decoration: underline;
 }
 .active{
   position: relative;
